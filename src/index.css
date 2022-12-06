@@ -1,13 +1,153 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@900&family=Noto+Sans+Malayalam:wght@900&display=swap");
+@font-face {
+  font-family: "digital-clock-font";
+  src: url("../digital-7.ttf");
+}
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+select {
+  padding: 5px 20px;
+
+  border: none;
+}
+
+.azan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.displaybox {
+  border: 2px solid #ffff;
+  width: 60%;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+}
+.time,
+.date-E,
+.date-A,
+.dropdown {
+  display: flex;
+  flex-direction: row;
+}
+.time {
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 5%;
+}
+
+.time > img {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  left: -10px;
+}
+.date-E {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5%;
+  gap: 20px;
+}
+
+.date-A {
+  justify-content: space-between;
+  margin: 0 5%;
+  padding: 5px 0;
+}
+.center {
+  margin: 0 20%;
+  z-index: 10;
+}
+td {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.m-font {
+  font-family: "Noto Sans Malayalam", sans-serif;
+  color: rgb(28, 212, 28);
+}
+.a-font {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  color: rgb(28, 212, 28);
+}
+.d-font {
+  font-family: "digital-clock-font";
+  font-size: 1.5rem;
+  color: red;
+}
+.f-8 {
+  font-size: 1rem;
+}
+
+.l-space {
+  letter-spacing: 1px;
+}
+.f-16 {
+  font-size: 2.2rem;
+}
+.pd {
+  padding-right: 20px;
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+.blinker {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  td {
+    padding: 0;
+    font-size: 1rem;
+  }
+  .azan {
+    margin: 0;
+  }
+  .displaybox {
+    min-width: 330px;
+    min-height: 550px;
+    display: flex;
+    justify-content: center;
+  }
+  td {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+  .center {
+    margin: 0 10%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .displaybox {
+    min-width: 650px;
+  }
 }
